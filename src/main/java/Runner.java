@@ -1,3 +1,4 @@
+import com.google.gson.Gson;
 
 public class Runner {
 
@@ -15,5 +16,9 @@ public class Runner {
 		
 		newService.retrieveAccounts();
 		
+		Gson gson = new Gson();
+		String json = gson.toJson(newService.accountList);
+		
+		System.out.println(json);
 	}
 }

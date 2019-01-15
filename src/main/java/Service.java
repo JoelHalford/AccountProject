@@ -8,14 +8,14 @@ public class Service {
 	
 	public void addAccount(Account account)
 	{
-		accountList.put(account.getAccountNumber(), account);
+		accountList.put(account.getID(), account);
 	}
 	
 	public void retrieveAccounts()
 	{
 		for (int i = 1; i < accountList.size()+1; i++)
 		{
-			System.out.println(accountList.get(i).getFirstName() + " " + accountList.get(i).getLastName());
+			System.out.println(accountList.get(i).getFirstName() + " " + accountList.get(i).getLastName() + " " + accountList.get(i).getAccountNumber());
 		}
 	}
 }

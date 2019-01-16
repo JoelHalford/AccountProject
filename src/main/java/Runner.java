@@ -14,10 +14,10 @@ public class Runner {
 		newService.addAccount(john);
 		newService.addAccount(michael);
 		
-		newService.retrieveAccounts();
+		System.out.println(newService.retrieveAccounts());
 		
 		Gson gson = new Gson();
-		String json = gson.toJson(newService.accountList);
+		String json = gson.toJson(newService.retrieveAccounts());
 		
 		System.out.println(json);
 	}

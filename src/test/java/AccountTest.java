@@ -13,7 +13,6 @@ public class AccountTest {
 		
 		assertEquals(john.getAccountNumber(), 1);
 		assertEquals(john.getLastName(), "Wayne");
-		assertEquals(michael.getAccountNumber(), 3);
 		assertEquals(michael.getLastName(), "Jackson");
 	}
 	
@@ -28,6 +27,6 @@ public class AccountTest {
 		newService.addAccount(john);
 		newService.addAccount(michael);
 		
-		assertEquals(newService.accountList.size(), 2);
+		assertEquals(newService.retrieveAccounts().size(), 2);
 	}
 }

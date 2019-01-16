@@ -24,4 +24,19 @@ public class Service {
 	{
 		return accountList;
 	}
+	
+	public int countDupes(String name)
+	{
+		int count = 0;
+		
+		for (int i = 1; i < accountList.size()+1; i++)
+		{
+			if (accountList.get(i).getFirstName().equals(name))
+			{
+				count += 1;
+			}
+		}
+		
+		return count;
+	}
 }

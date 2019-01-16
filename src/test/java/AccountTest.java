@@ -1,14 +1,22 @@
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class AccountTest {
 	
+	Account john;
+	Account michael;
+	
+	@Before
+	public void setup() {
+		 john = new Account("John", "Wayne", 1);
+		 michael = new Account("Michael", "Jackson", 3);	
+	}
+	
+	
 	@Test
 	public void createAccount() {
-		
-		Account john = new Account("John", "Wayne", 1);
-		Account michael = new Account("Michael", "Jackson", 3);
 
 		
 		assertEquals(john.getAccountNumber(), 1);
@@ -16,11 +24,9 @@ public class AccountTest {
 		assertEquals(michael.getLastName(), "Jackson");
 	}
 	
+	
 	@Test
 	public void retrieveAccounts() {
-		
-		Account john = new Account("John", "Wayne", 1);
-		Account michael = new Account("Michael", "Jackson", 3);
 		
 		Service newService = new Service();
 		
@@ -32,9 +38,6 @@ public class AccountTest {
 	
 	@Test
 	public void searchName() {
-		
-		Account john = new Account("John", "Wayne", 1);
-		Account michael = new Account("Michael", "Jackson", 2);
 		Account john2 = new Account("John", "Blade", 3);
 		Account dave = new Account("Dave", "Jackson", 4);
 		Account john3 = new Account("John", "Daniels", 5);	
@@ -52,7 +55,6 @@ public class AccountTest {
 	
 	@Test
 	public void setName() {
-		Account john = new Account("John", "Wayne", 1);
 		
 		john.setFirstName("Josh");
 		
@@ -61,7 +63,6 @@ public class AccountTest {
 	
 	@Test
 	public void setLastName() {
-		Account john = new Account("John", "Wayne", 1);
 		
 		john.setLastName("Halford");
 		
@@ -70,7 +71,6 @@ public class AccountTest {
 	
 	@Test
 	public void setAccountNumber() {
-		Account john = new Account("John", "Wayne", 1);
 		
 		john.setAccountNumber(3);
 		
